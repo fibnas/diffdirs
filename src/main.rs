@@ -37,7 +37,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     // Paths only in dirA
     for path in paths_a.difference(&paths_b) {
-        println!("{}", Paint::red(format!("Only in {}: {}", args.dir_a, path)));
+        println!("{}", Paint::blue(format!("Only in {}: {}", args.dir_a, path)));
     }
 
     // Paths only in dirB
