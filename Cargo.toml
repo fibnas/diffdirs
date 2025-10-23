@@ -8,7 +8,6 @@ repository = "https://github.com/fibnas/diffdirs"
 categories = ["command-line-utilities"]
 keywords = ["diff", "directories", "compare", "cli", "filesystem"]
 readme = "README.md"
-exclude = ["target/", "entries.json", "screenshots/", "assets/"]
 include = ["src/**", "Cargo.toml", "README.md", "LICENSE", "assets/**"]
 
 [dependencies]
