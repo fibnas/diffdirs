@@ -2,6 +2,7 @@ use clap::Parser;
 use std::collections::HashSet;
 use std::path::Path;
 use walkdir::WalkDir;
+use yansi::Paint;
 
 #[derive(Parser)]
 #[command(name = "diffdirs")]
@@ -36,13 +37,22 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     // Paths only in dirA
     for path in paths_a.difference(&paths_b) {
-        println!("Only in {}: {}", args.dir_a, path);
+        println!("{}", Paint::red(format!("Only in {}: {}", args.dir_a, path)));
     }
 
     // Paths only in dirB
     for path in paths_b.difference(&paths_a) {
-        println!("Only in {}: {}", args.dir_b, path);
+        println!("{}", Paint::red(format!("Only in {}: {}", args.dir_b, path)));
     }
+
+     // Add this summary after the loops
+    println!(
+        "\nSummary: {} unique in {}, {} unique in {}",
+        paths_a.difference(&paths_b).count(),
+        args.dir_a,
+        paths_b.difference(&paths_a).count(),
+        args.dir_b
+    );
 
     Ok(())
 }
