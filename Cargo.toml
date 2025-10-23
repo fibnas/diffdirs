@@ -6,7 +6,7 @@ description = "Compare two directories and show differences in files or subdirec
 license = "MIT"
 repository = "https://github.com/fibnas/diffdirs"
 categories = ["command-line-utilities"]
-keywords = ["diff", "directories", "compare", "cli", "filesystem", "rust"]
+keywords = ["diff", "directories", "compare", "cli", "filesystem"]
 readme = "README.md"
 exclude = ["target/", "entries.json", "screenshots/", "assets/"]
 
