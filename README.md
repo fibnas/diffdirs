@@ -104,12 +104,21 @@ Example JSON output:
 ## Example Output (default mode)
 
 ```bash
-Only in /home/fn/test-a: file1
-Only in /home/fn/test-a: notes.txt
-Only in /home/fn/test-b: cheatsheet.txt
-Only in /home/fn/test-b: file5
+Files that appear only in /home/fn/test-a: (6)
+  file1
+  file2
+  echo/info.txt
+  todo.txt
+  notes.txt
+  file3
 
-Summary: 5 unique in /home/fn/test-a, 3 unique in /home/fn/test-b
+Files that appear only in /home/fn/test-b: (4)
+  cheatsheet.txt
+  file5
+  delta/secret.txt
+  file4
+
+Summary: 6 unique in /home/fn/test-a, 4 unique in /home/fn/test-b
 ```
 
 ## Acknowledgements
