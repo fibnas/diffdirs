@@ -82,24 +82,24 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         };
         println!("{}", serde_json::to_string_pretty(&result)?);
     } else {
-        // Paths only in dirA
-        for path in &only_in_a {
-            println!(
-                "{}",
-                Paint::blue(format!("Only in {}: {}", args.dir_a, path))
-            );
+        if !only_in_a.is_empty() {
+            println!("{} ({})", Paint::yellow(format!("Files that appear only in {}:", args.dir_a)), Paint::blue(only_in_a.len()));
+            for path in &only_in_a {
+                println!("  {}", Paint::blue(path));
+            }
+            println!();
         }
 
-        // Paths only in dirB
-        for path in &only_in_b {
-            println!(
-                "{}",
-                Paint::red(format!("Only in {}: {}", args.dir_b, path))
-            );
+        if !only_in_b.is_empty() {
+            println!("{} ({})", Paint::yellow(format!("Files that appear only in {}:", args.dir_b)), Paint::red(only_in_b.len()));
+            for path in &only_in_b {
+                println!("  {}", Paint::red(path));
+            }
+            println!();
         }
 
         println!(
-            "\nSummary: {} unique in {}, {} unique in {}",
+            "Summary: {} unique in {}, {} unique in {}",
             Paint::blue(paths_a.difference(&paths_b).count()),
             args.dir_a,
             Paint::red(paths_b.difference(&paths_a).count()),

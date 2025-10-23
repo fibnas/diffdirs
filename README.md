@@ -1,7 +1,8 @@
 # diffdirs
 
-A fast, minimal Rust CLI tool for comparing the contents of two directories.  
-Displays which files or directories exist only in one location or the other, with optional color output, depth limiting, and JSON support.
+A fast, minimal Rust CLI tool for comparing the contents of two directories.
+Displays which files or directories exist only in one location or the other,
+with optional color output, depth limiting, and JSON support.
 
 ## Features
 
@@ -38,14 +39,14 @@ diffdirs [OPTIONS] <DIR_A> <DIR_B>
 ### Arguments
 
 | Argument | Description |
-|-----------|--------------|
+| -----------|-------------- |
 | `<DIR_A>` | First directory to compare |
 | `<DIR_B>` | Second directory to compare |
 
 ### Options
 
 | Option | Description |
-|--------|--------------|
+| --------|-------------- |
 | `--dirs` | Compare only directories (not files) |
 | `--depth <DEPTH>` | Maximum depth to traverse (`0` = only root) |
 | `--json` | Output results in JSON format |
@@ -109,7 +110,17 @@ Only in /home/fn/test-b: file5
 Summary: 5 unique in /home/fn/test-a, 3 unique in /home/fn/test-b
 ```
 
+## Acknowledgements
+
+> Inspired by earlier directory diff tools such as [diffdir](https://crates.io/crates/diffdir), with a focus on modern CLI ergonomics and flexible output formats.
+
+- [walkdir](https://crates.io/crates/walkdir) for fast recursive directory traversal
+- [clap](https://crates.io/crates/clap) for ergonomic CLI argument parsing
+- [yansi](https://crates.io/crates/yansi) for lightweight colorized output
+- [serde_json](https://crates.io/crates/serde_json) for clean JSON serialization
+- Inspiration from classic UNIX `diff` and `tree` utilities
+
 ## License
 
-MIT License  
+MIT License
 See [LICENSE](LICENSE) for details.
