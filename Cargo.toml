@@ -1,13 +1,23 @@
 [package]
 name = "diffdirs"
-version = "0.1.1"
+version = "0.2.0"
 edition = "2024"
+description = "Compare two directories and show differences in files or subdirectories with colorized output, depth limiting, and JSON support."
+license = "MIT"
+repository = "https://github.com/fibnas/diffdirs"
+categories = ["command-line-utilities"]
+keywords = ["diff", "directories", "compare", "cli", "filesystem", "rust"]
+readme = "README.md"
+exclude = ["target/", "entries.json", "screenshots/", "assets/"]
 
 [dependencies]
-
 clap = { version = "4.5", features = ["derive"] }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 walkdir = "2.5"
 ignore = "0.4"
 yansi = "0.5"
+
+[[bin]]
+name = "diffdirs"
+path = "src/main.rs"
