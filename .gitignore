@@ -39,3 +39,4 @@ tests/tmp/
 **/mutants.out*/
 *.pdb
 
+assets/* linguist-documentation
