@@ -4,6 +4,8 @@ A fast, minimal Rust CLI tool for comparing the contents of two directories.
 Displays which files or directories exist only in one location or the other,
 with optional color output, depth limiting, and JSON support.
 
+<img width="532" height="327" alt="diffdirs" src="https://github.com/user-attachments/assets/11b6e27f-d3ee-4c19-be65-3e81fe5ad900" />
+
 ## Features
 
 - Compare two directories for unique paths
